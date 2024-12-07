@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CameraRecognitionApp</string>
+    <string name="title">Recognition car number</string>
+    <string name="titleForInfo">Information about car</string>
+    <string name="titleForHistory">History</string>
+    <string name="brand">1.Марка - модель</string>
+    <string name="years">2.Рік випуску</string>
+    <string name="color">3.Колір</string>
+    <string name="type">4.Тип пз</string>
+    <string name="body">5.Кузов</string>
+    <string name="fuel">6.Паливо</string>
+    <string name="engine">7.Обєм двигуна</string>
+    <string name="weigth">8.Вага без навантаження</string>
+    <string name="owner">9.Власник</string>
+    <string name="address">10.Адреса</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
