@@ -185,7 +185,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void addFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, fragment, "LOGIN_TAG")
+                .add(R.id.fragment_container, fragment, fragment.getClass().getName())
+                .addToBackStack(fragment.getClass().getName())
                 .commit();
     }
 }
