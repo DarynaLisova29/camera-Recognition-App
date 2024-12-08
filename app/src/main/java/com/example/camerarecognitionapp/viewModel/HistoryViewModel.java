@@ -7,6 +7,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.camerarecognitionapp.App;
+import com.example.camerarecognitionapp.di.AppComponent;
 import com.example.camerarecognitionapp.model.Car;
 import com.example.camerarecognitionapp.model.recycler_view.CarAdapter;
 import com.example.camerarecognitionapp.repositories.MyRepo;
@@ -15,17 +17,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class HistoryViewModel extends ViewModel {
+
     MutableLiveData<List<Car>> historyCarLiveData= new MutableLiveData<>();
+    @Inject
     MyRepo myRepo;
     LiveData <List<Car>> getHistoryCar;
 
-
     public HistoryViewModel() {
         //Dagger 2 Inject
-        myRepo=new MyRepo();
-        getHistoryCar=myRepo.getAllCars();
+        App.appComponent.inject(this);
+        getHistoryCar = myRepo.getAllCars();
     }
+
 
     public LiveData<List<Car>> getGetHistoryCar() {
         return getHistoryCar;

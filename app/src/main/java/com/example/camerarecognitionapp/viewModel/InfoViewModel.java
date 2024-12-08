@@ -3,6 +3,7 @@ package com.example.camerarecognitionapp.viewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.camerarecognitionapp.App;
 import com.example.camerarecognitionapp.model.Car;
 import com.example.camerarecognitionapp.repositories.MyRepo;
 
@@ -10,12 +11,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.inject.Inject;
+
 public class InfoViewModel extends ViewModel {
     MutableLiveData<Car> infoCarLiveData= new MutableLiveData<>();
+    @Inject
     MyRepo myRepo;
 
     public InfoViewModel() {
-        myRepo=new MyRepo();
+        App.appComponent.inject(this);
     }
 
     public MutableLiveData<Car>getInfoCarLiveData(){
