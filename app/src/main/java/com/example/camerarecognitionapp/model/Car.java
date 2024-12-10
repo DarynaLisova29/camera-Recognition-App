@@ -35,30 +35,43 @@ public class Car {
     public void setInfo() throws IOException {
         Document doc= Jsoup.connect("https://ukr.zone/uk/gos-nomer/?q="+numberCar).get();
         Elements element1= doc.select("div.right");
-        Log.d("LogInfo",element1.get(1).text());
-        Log.d("LogInfo",element1.get(2).text());
-        Log.d("LogInfo",element1.get(3).text());
-        Log.d("LogInfo",element1.get(4).text());
-        Log.d("LogInfo",element1.get(5).text());
-        Log.d("LogInfo",element1.get(6).text());
-        Log.d("LogInfo",element1.get(7).text());
-        Log.d("LogInfo",element1.get(8).text());
-        Log.d("LogInfo",element1.get(9).text());
-        Log.d("LogInfo",element1.get(10).text());
+        for(int i=1; i<11;i++){
+            Log.d("LogInfo",element1.get(i).text());
+        }
 
-        brand=element1.get(1).text();
-        year=Integer.parseInt(element1.get(2).text());
-        color=element1.get(3).text();
-        type=element1.get(4).text();
-        body=element1.get(5).text();
-        fuel=element1.get(6).text();
-        engineVolume=element1.get(7).text();
-        weight=element1.get(8).text();
-        owner=element1.get(9).text();
-        address=element1.get(10).text();
+        if(isInteger(element1.get(2).text())) {
+            brand = element1.get(1).text();
+            year = Integer.parseInt(element1.get(2).text());
+            color = element1.get(3).text();
+            type = element1.get(4).text();
+            body = element1.get(5).text();
+            fuel = element1.get(6).text();
+            engineVolume = element1.get(7).text();
+            weight = element1.get(8).text();
+            owner = element1.get(9).text();
+            address = element1.get(10).text();
+        }else{
+            brand="";
+            year=-1;
+            color="";
+            type="";
+            body="";
+            fuel="";
+            engineVolume="";
+            weight="";
+            owner="";
+            address="";
+        }
 
     }
-
+    public boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true; // Це дійсне ціле число
+        } catch (NumberFormatException e) {
+            return false; // Не ціле число
+        }
+    }
     public int getId() {
         return id;
     }

@@ -108,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             openGalleryCamera(false);
         }else if(view.getId()==R.id.infoCard){
             Log.d("Click","Click");
+            //заглушка
+            appViewModel.setNumberCar("AA4447OC");
+            textViewResult.setText("AA4447OC");
 
             // TODO: 05.12.2024  
             if(textViewResult.getText()!=null&&!textViewResult.getText().equals("Не вдалося розпізнати номерний знак")) {

@@ -87,14 +87,14 @@ public class InfoFragment extends Fragment {
             public void onChanged(Car car) {
                 if(car!=null) {
                     // TODO: 05.12.2024 rewrite "One value"
-                    brandText.setText("1.Мапка - модель: " + car.getBrand());
+                    brandText.setText("1.Марка - модель: " + car.getBrand());
                     yearText.setText("2.Рік: " + car.getYear());
                     colorText.setText("3.Колір: " + car.getColor());
                     typeText.setText("4.Тип ТЗ: " + car.getType());
                     bodyText.setText("5.Кузов: " + car.getBody());
                     fuelText.setText("6.Паливо: " + car.getFuel());
-                    engineVolumeText.setText("7.Обєм двигуна: " + car.getEngineVolume() + " см3");
-                    weightText.setText("8.Вага без навантаження: " + car.getWeight() + " кг");
+                    engineVolumeText.setText("7.Обєм двигуна: " + car.getEngineVolume());
+                    weightText.setText("8.Вага без навантаження: " + car.getWeight());
                     ownerText.setText("9.Власник: " + car.getOwner());
                     addressText.setText("10.Адреса: " + car.getAddress());
 
